@@ -1,0 +1,7 @@
+package myClasses;
+
+public interface SessionInterface {
+
+	public double compute();
+	
+}

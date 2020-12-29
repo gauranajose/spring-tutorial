@@ -1,0 +1,60 @@
+package myClasses;
+
+public class Session implements SessionInterface {
+
+	private int size;
+	private double[] arr;
+	private int choice;
+	private double result;
+	
+	public Session() {
+		
+	}
+	
+	@Override
+	public double compute() {
+		double sum = 0, ave, min, max, var, std;
+		min = 999999;
+		max = 0;
+		for (double a: arr) {
+			sum += a;
+			if (a < min)
+				min = a;
+			if (a > max)
+				max = a;
+		}
+		ave = sum/size;
+		double temp = 0;
+		for (double a: arr) {
+			temp = temp + Math.pow((ave - a), 2);
+		}
+		var = temp/size;
+		std = Math.pow(var, 0.5);
+		
+		switch (choice) {
+		case 1:
+			result = sum;
+			break;
+		case 2:
+			result = ave;
+			break;
+		case 3:
+			result = min;
+			break;
+		case 4:
+			result = max;
+			break;
+		case 5:
+			result = var;
+			break;
+		case 6:
+			result = std;
+			break;
+		default: 
+			break;
+		}
+		
+		return result;
+	}
+
+}

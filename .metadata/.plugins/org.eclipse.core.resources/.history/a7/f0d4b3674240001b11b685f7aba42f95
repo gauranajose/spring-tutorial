@@ -1,0 +1,38 @@
+package myApp;
+
+import myClasses.SessionInterface;
+
+public class Session implements SessionInterface {
+
+	private int size;
+	private double[] arr;
+	private int choice;
+	private double result;
+	
+	
+	@Override
+	public double compute() {
+		double sum = 0, ave = 0, min, max, var, std;
+		min = 999999;
+		max = 0;
+		for (double a: arr) {
+			sum += a;
+			if (a < min)
+				min = a;
+			if (a > max)
+				max = a;
+		}
+		ave = sum/size;
+		double temp = 0;
+		for (double a: arr) {
+			temp = temp + Math.pow((ave - a), 2);
+		}
+		var = temp/size;
+		std = Math.pow(var, 0.5);
+		
+		
+		
+		return 0;
+	}
+
+}

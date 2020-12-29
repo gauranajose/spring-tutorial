@@ -1,0 +1,66 @@
+package myApp;
+
+import java.util.Scanner;
+
+import myClasses.Session;
+import myClasses.SessionInterface;
+
+public class Test {
+
+	public static void main(String[] args) {
+		
+		SessionInterface session = new Session();
+		
+		System.out.println("Programmed by: Gaurana, Jose Lean L.");
+		System.out.println("CS145-8L/BM1");
+		System.out.println("Activity 1.4 Abstraction in OOP");
+		
+		Scanner myObj = new Scanner (System.in);
+		
+		int size;
+		do {
+			System.out.println("\nEnter size of array: ");
+			size = myObj.nextInt();
+			if (size < 5) {
+				System.out.println("Invalid size. Must be atleast 5.");
+			}
+		} while (size < 5);
+		
+		session.setSize(size);
+		
+		double value;
+		for (int i = 0; i < session.getSize(); i++) {
+			do {
+				System.out.println("Enter value of array[" + i + "]: ");
+				value = myObj.nextDouble();
+				if (value < 0)
+					System.out.println("Invalid value. Must be atleast 0.");
+			} while (value < 0);
+		}
+		int choice;
+		do {
+			System.out.println("\n======================");
+			System.out.println("      MAIN MENU       ");
+			System.out.println("======================");
+			System.out.println("[1] Sum");
+			System.out.println("[2] Average");
+			System.out.println("[3] Minimum");
+			System.out.println("[4] Maximum");
+			System.out.println("[5] Variance");
+			System.out.println("[6] Standard Deviation");
+			System.out.println("[0] End Program");
+			System.out.println("======================");
+			do {
+				System.out.println("Enter choice: ");
+				choice = myObj.nextInt();
+				if (choice < 0 || choice > 6)
+					System.out.println("Invalid choice.");
+			} while (choice < 0 || choice > 6);
+			session.setChoice(choice);
+			session.compute();
+		} while (choice != 0);
+		
+		System.out.println("End of Program ...");
+	}
+
+}

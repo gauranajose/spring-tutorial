@@ -1,0 +1,8 @@
+package myClasses;
+
+public interface SessionInterface {
+
+	public double compute();
+	public void setSize(int size);
+	public void setChoice(int choice);
+}

@@ -1,0 +1,13 @@
+package myApp;
+
+import myClasses.SessionInterface;
+
+public class Seesion implements SessionInterface {
+
+	@Override
+	public void compute() {
+		// TODO Auto-generated method stub
+
+	}
+
+}
